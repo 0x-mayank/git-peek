@@ -1,0 +1,21 @@
+{
+  "name": "git-peek",
+  "version": "0.1.0",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "git-peek": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2"
+  }
+}
