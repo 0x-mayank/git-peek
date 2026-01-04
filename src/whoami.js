@@ -1,24 +1,10 @@
 import axios from "axios";
 import chalk from "chalk";
-import { getConfig } from "./config.js";
+import { getAuthenticatedUser } from "./api.js";
 
 export async function whoami() {
-  const config = getConfig();
-
-  if (!config || !config.token) {
-    console.log(chalk.red("not logged in"));
-    console.log(chalk.yellow("run: git-peek login <token>"));
-    return;
-  }
-
   try {
-    const res = await axios.get("https://api.github.com/user", {
-      headers: {
-        Authorization: `Bearer ${config.token}`,
-      },
-    });
-
-    const user = res.data;
+    const user = await getAuthenticatedUser();
 
     console.log(chalk.green("Logged in"));
     console.log(`Username : ${user.login}`);

@@ -1,6 +1,7 @@
 import { Command } from "commander";
 import { login } from "./login.js";
 import { whoami } from "./whoami.js";
+import { logout } from "./logout.js";
 
 const program = new Command();
 
@@ -24,10 +25,9 @@ program
   });
 
 program
-    .command("hello")
-    .description('test command')
-    .action(()=>{
-        console.log("program is running");
-    })
+  .command("logout")
+  .description("logout and remove saved gitHub credentials")
+  .action(()=>logout());
+
 
 program.parse()
