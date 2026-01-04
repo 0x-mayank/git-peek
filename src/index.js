@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import { login } from "./login.js";
+import { whoami } from "./whoami.js";
 
 const program = new Command();
 
@@ -14,6 +15,13 @@ program
     .action((token)=>{
         login(token);
     });
+
+program
+  .command("whoami")
+  .description("show the currently logged-in gitHub user")
+  .action(()=>{
+    whoami();
+  });
 
 program
     .command("hello")
