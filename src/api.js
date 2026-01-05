@@ -51,3 +51,35 @@ export async function getRepo(owner, repo) {
   const res = await api.get(`/repos/${owner}/${repo}`);
   return res.data;
 }
+
+export async function compareCommits(owner, repo, base, head) {
+  try {
+    const res = await api.get(`/repos/${owner}/${repo}/compare/${base}...${head}`);
+    return res.data;
+  } catch (error) {
+    return null;
+  }
+}
+
+export async function getOwnedRepos() {
+  let page = 1;
+  let repos = [];
+
+  while (true) {
+    const res = await api.get("/user/repos", {
+      params: {
+        visibility: "all",
+        affiliation: "owner",
+        per_page: 100,
+        page
+      }
+    });
+
+    if (res.data.length === 0) break;
+
+    repos.push(...res.data);
+    page++;
+  }
+
+  return repos;
+}
