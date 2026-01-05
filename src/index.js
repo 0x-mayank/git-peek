@@ -11,7 +11,7 @@ const program = new Command();
 program
     .name("git-peek")
     .description("a cli tool for github stats")
-    .version("1.0.0")
+    .version("1.0.1")
 
 program
     .command("login <token>")
@@ -36,5 +36,15 @@ program
   .command("today")
   .description("Show today’s GitHub activity")
   .action(today);
+
+program
+  .command("week")
+  .description("Show last 7 days GitHub activity")
+  .action(week);
+
+program
+  .command("month")
+  .description("Show last 30 days GitHub activity")
+  .action(month);
 
 program.parse()
