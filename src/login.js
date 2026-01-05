@@ -22,4 +22,3 @@ export async function login(token) {
         process.exit(1);
     }
 }
-//test commit
