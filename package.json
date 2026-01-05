@@ -1,6 +1,6 @@
 {
-  "name": "git-peek",
-  "version": "1.0.0",
+  "name": "@0x-may/git-peek",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
   "bin": {
@@ -9,10 +9,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "github",
+    "cli",
+    "activity",
+    "devtools"
+  ],
+  "author": "Mayank",
   "license": "ISC",
-  "description": "",
+  "description": "Peek into your github activity from the terminal",
   "dependencies": {
     "axios": "^1.13.2",
     "chalk": "^5.6.2",
